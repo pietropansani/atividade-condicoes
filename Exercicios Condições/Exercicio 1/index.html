@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificador de Temperatura</title>
+</head>
+<body>
+
+    <h1>Resultado da Temperatura</h1>
+
+    <!-- Elemento onde o resultado vai aparecer -->
+    <h2 id="resultado"></h2>
+
+    <script>
+        // Pede a temperatura ao usuário
+        let temp = Number(prompt("Digite uma temperatura: "));
+
+        // Variável para guardar a mensagem
+        let mensagem = "";
+
+        // Verificação das condições
+        if (isNaN(temp)) {
+            mensagem = "Por favor, digite um número válido!";
+        } else if (temp < 15) {
+            mensagem = "Muito Frio 🥶";
+        } else if (temp >= 15 && temp < 20) {
+            mensagem = "Frio 🧥";
+        } else if (temp >= 20 && temp < 28) {
+            mensagem = "Agradável 😊";
+        } else {
+            mensagem = "Quente ☀️";
+        }
+
+        // Exibe o texto dentro do elemento HTML com id="resultado"
+        document.getElementById("resultado").textContent = mensagem;
+    </script>
+
+</body>
+</html>
